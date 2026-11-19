@@ -10,9 +10,9 @@
       id: 'day',
       name: 'DAY · Golden Hour',
       // Warm sunset spill: saturated, a touch of sepia, lifted light.
-      filter: 'saturate(1.18) sepia(0.22) brightness(1.05) contrast(1.03)',
-      overlayTop: 'rgba(255,122,40,0.14)',
-      overlayBottom: 'rgba(255,80,120,0.10)'
+      filter: 'saturate(1.66) sepia(0.36) brightness(0.95) contrast(1.06)',
+      overlayTop: 'rgba(255,122,40,0.24)',
+      overlayBottom: 'rgba(255,80,120,0.18)'
     },
     night: {
       id: 'night',
