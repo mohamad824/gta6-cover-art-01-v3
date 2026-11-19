@@ -1,0 +1,142 @@
+@font-face {
+  font-family: 'Oswald';
+  src: url('fonts/Oswald.ttf') format('truetype');
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pacifico';
+  src: url('fonts/Pacifico-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #0d0a18;
+  color: #f4eef7;
+  font-family: Oswald, 'Arial Narrow', sans-serif;
+}
+.topbar {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 14px 20px 10px;
+  border-bottom: 2px solid #ff2e88;
+  background: linear-gradient(90deg, #160a2e, #2b0a33 60%, #160a2e);
+}
+.brand-mark {
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: 4px;
+  background: linear-gradient(180deg, #fff, #ffe14d 55%, #ff7a1a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.brand-sub {
+  font-family: Pacifico, cursive;
+  color: #ff7ec2;
+  font-size: 18px;
+}
+.tagline { margin: 0; color: #cbb8d8; font-size: 14px; letter-spacing: 1px; }
+
+.studio {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 16px 20px 28px;
+  max-width: 1560px;
+  margin: 0 auto;
+}
+.preview-col { flex: 1 1 640px; min-width: 0; }
+.preview-wrap {
+  border: 3px solid #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 8px 40px rgba(255, 46, 136, 0.25);
+}
+#preview { display: block; width: 100%; height: auto; cursor: crosshair; touch-action: none; }
+.status { color: #ffd34d; margin: 10px 2px 4px; min-height: 20px; }
+.hint { color: #9d8bab; margin: 0 2px 14px; font-size: 13px; }
+.export-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.section-label { font-weight: 700; letter-spacing: 2px; color: #ff8fb8; }
+
+.controls { flex: 0 0 380px; display: flex; flex-direction: column; gap: 14px; }
+.card {
+  background: #1a1230;
+  border: 1px solid #3a2358;
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.card h2 { margin: 0 0 10px; font-size: 16px; letter-spacing: 2px; color: #ffd34d; text-transform: uppercase; }
+.card-note { color: #b9a6c9; font-size: 13px; margin: 0 0 10px; }
+.btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn {
+  font-family: Oswald, sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #f4eef7;
+  background: #2c1b4d;
+  border: 1px solid #5b3a8a;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.btn:hover { border-color: #ff2e88; }
+.btn.active { background: #ff2e88; border-color: #ff2e88; color: #fff; }
+.btn.export { background: #ffd21f; color: #1a0b1e; border-color: #ffd21f; font-weight: 700; }
+.btn.small { padding: 5px 9px; font-size: 12px; }
+.btn.ghost { background: transparent; }
+.check { display: block; margin-top: 10px; font-size: 14px; }
+label { display: block; font-size: 13px; color: #cbb8d8; margin-bottom: 8px; }
+input[type="text"] {
+  display: block;
+  width: 100%;
+  margin-top: 3px;
+  padding: 7px 9px;
+  font-family: Oswald, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  background: #0d0a18;
+  border: 1px solid #5b3a8a;
+  border-radius: 5px;
+}
+input[type="range"] { width: 100%; accent-color: #ff2e88; }
+.fill-all { display: inline-block; margin-top: 8px; }
+
+.panel-row {
+  border: 1px solid #3a2358;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #140d26;
+}
+.panel-row.selected { border-color: #ffd34d; }
+.panel-row.off-layout { opacity: 0.55; }
+.panel-name {
+  display: block;
+  font-family: Oswald, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+  background: none;
+  border: none;
+  padding: 0 0 6px;
+  cursor: pointer;
+  text-align: left;
+}
+.panel-row .mini { display: inline-block; width: 31%; margin-right: 2%; vertical-align: top; }
+.panel-row .mini input[type="text"] { font-size: 13px; padding: 5px 7px; }
+.panel-row .mini input[type="range"] { margin-top: 8px; }
+.panel-actions { display: flex; gap: 8px; margin-top: 4px; }
+.about p { color: #b9a6c9; font-size: 13px; line-height: 1.5; margin: 0; }
+
+@media (max-width: 980px) {
+  .studio { flex-direction: column; }
+  .controls { flex-basis: auto; width: 100%; }
+}

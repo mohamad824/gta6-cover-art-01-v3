@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BRINEHAVEN Cover Studio — seven-panel GTA-style cover maker</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">BRINEHAVEN</span>
+    <span class="brand-sub">Cover Studio · Tide City Nights</span>
+  </div>
+  <p class="tagline">One night in Brinehaven — golden-hour drive, harbour, police heli, speedboat escape, neon night.</p>
+</header>
+
+<main class="studio">
+  <section class="preview-col">
+    <div class="preview-wrap">
+      <canvas id="preview" width="1280" height="720" aria-label="Live cover preview"></canvas>
+    </div>
+    <p id="status" class="status" role="status">Loading seven fresh photos…</p>
+    <p class="hint">Click a panel to select it · drag on the cover to position its photo · scroll over it to zoom.</p>
+
+    <div class="export-row">
+      <span class="section-label">Export PNG</span>
+      <button id="export-wide" class="btn export" type="button" data-export="wide">1920 × 1080</button>
+      <button id="export-square" class="btn export" type="button" data-export="square">1080 × 1080</button>
+      <button id="export-portrait" class="btn export" type="button" data-export="portrait">1080 × 1350</button>
+    </div>
+  </section>
+
+  <aside class="controls">
+    <section class="card">
+      <h2>Layout</h2>
+      <div class="btn-row">
+        <button id="layout-story" class="btn active" type="button" data-layout="story">7-Panel Story</button>
+        <button id="layout-five" class="btn" type="button" data-layout="five">5-Panel Classic</button>
+        <button id="layout-hero" class="btn" type="button" data-layout="hero">Hero Focus</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Grade — one click</h2>
+      <div class="btn-row">
+        <button id="grade-day" class="btn active" type="button" data-grade="day">☀ DAY · Golden Hour</button>
+        <button id="grade-night" class="btn" type="button" data-grade="night">☾ NIGHT · Neon</button>
+      </div>
+      <label class="check"><input id="wanted-toggle" type="checkbox" checked> Show WANTED ★★★★★ pill on the heli panel</label>
+    </section>
+
+    <section class="card">
+      <h2>Title &amp; words</h2>
+      <label>Title <input id="title-input" type="text" value="BRINEHAVEN" maxlength="24"></label>
+      <label>Script subtitle <input id="script-input" type="text" value="Tide City Nights" maxlength="40"></label>
+      <label>Quote <input id="quote-input" type="text" value="THE TIDE DECIDES THE ROADS" maxlength="60"></label>
+      <label>Quote source <input id="quote-source-input" type="text" value="BRINE FM 91.4" maxlength="30"></label>
+      <label>Bottom tagline <input id="tagline-input" type="text" value="THE TIDE DECIDES THE ROADS · COMING SOON" maxlength="60"></label>
+    </section>
+
+    <section class="card">
+      <h2>Selected panel: <span id="selected-panel">HERO</span></h2>
+      <label>Zoom <input id="zoom-selected" type="range" min="1" max="3" step="0.05" value="1"></label>
+      <button id="reset-crop" class="btn small" type="button">Reset crop</button>
+      <label class="btn small fill-all">Fill all panels with one photo
+        <input id="fill-all-input" type="file" accept="image/*" hidden>
+      </label>
+    </section>
+
+    <section class="card panels-card">
+      <h2>Panels — photo, caption &amp; crop</h2>
+      <p class="card-note">Each panel takes its own photo (Upload) or the shipped sample (Sample). Edit its place, time and flavour — the chip on the cover updates live.</p>
+      <div id="panel-list"></div>
+    </section>
+
+    <section class="card about">
+      <h2>About this cover</h2>
+      <p>Seven fresh photos, shot for one story: a golden-hour drive down Palm Boulevard, a last-light portrait at Marina del Sol, a pink car at full throttle on Interstate 6, first cast at Pier 26, the police heli over Tower 2, open water at 10:04 PM, and lights out on Route 27. All lettering is original — Oswald and Pacifico under the SIL Open Font License.</p>
+    </section>
+  </aside>
+</main>
+
+<script src="story-layout.js"></script>
+<script src="grade-flip.js"></script>
+<script src="caption-lettering.js"></script>
+<script src="panel-crop.js"></script>
+<script src="cover-render.js"></script>
+<script src="png-export.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
